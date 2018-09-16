@@ -117,11 +117,11 @@ class PBIL(object):
         
         self._optim_kwargs = PBIL.OPTIM_KWARGS
         
-        for k, v in optim_kwargs.keys():
+        for k, v in optim_kwargs.items():
             if k not in self._optim_kwargs.keys():
                 raise KeyError("Unexpected keyword for optim_kwargs: {0}".format(k))
             else:
-                self._optim_kwargs = v
+                self._optim_kwargs[k] = v
         
         # loss function
         self._func = func
